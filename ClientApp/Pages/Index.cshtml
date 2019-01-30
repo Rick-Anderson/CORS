@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">CORS Test</h1>
+</div>
+
+<script>
+
+    var serviceUrl = 'https://webapi20190128063025.azurewebsites.net/api/values/1';
+
+    function CORSRequest() {
+
+        var method = $('#method').val();
+
+        $.ajax({
+            type: method,
+            url: serviceUrl
+        }).done(function (data) {
+            $('#data').text(data);
+        });
+    }
+
+</script>
